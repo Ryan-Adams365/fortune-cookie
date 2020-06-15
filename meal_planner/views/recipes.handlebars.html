@@ -1,0 +1,23 @@
+<h1>Recipes</h1>
+<div class="dbTable">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Picture</th>
+        </tr>
+        {{#each recipes}}
+        <tr>
+            <td>{{recipeID}}</td>
+            <td>{{name}}</td>
+            <td><img class="thumbnail" src="/images/{{imagePath}}" /></td>
+            <td><input type="button" onclick="deleteRecipe({{recipeID}})" value="Delete" /></td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
+<div>
+    <label for="searchRecipesInput">Search Recipes by Name:</label>
+    <input type="search" id="searchRecipesInput" name="searchRecipesInput"  />
+    <input type="button" onclick="searchRecipesByName()" value="Search" />
+</div>

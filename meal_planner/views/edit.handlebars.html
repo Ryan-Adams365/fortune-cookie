@@ -1,0 +1,11 @@
+<h1>Edit Workout</h1>
+<div>
+    <form id="addExercise">
+        Date: <input type="date" name="dateInput" value="{{date}}" /><br />
+        Name: <input type="text" name="nameInput" value="{{name}}" /><br />
+        Reps: <input type="number" name="repsInput" value="{{reps}}" /><br />
+        Weights Used: <input type="number" name="weightInput" value="{{weight}}" /><br />
+        Measured in Pounds: <input type="checkbox" name="lbsInput" {{lbs}} /><br />
+        <input type="button" onclick="updateExercise({{id}})" value="Update Exercise" /><br />
+    </form>
+</div>

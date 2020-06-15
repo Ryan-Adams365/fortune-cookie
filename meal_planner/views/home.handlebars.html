@@ -1,0 +1,51 @@
+<h1>Meal Planner Home</h1>
+<p>
+    Welcome to your Meal Planner!
+</p>
+<p>
+    Please use the navigation bar to browse the site.
+</p>
+
+<div class="slideShow">
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+    {{#each recipes}}
+    <div class="slide">
+        <img src="/images/{{imagePath}}" />
+    </div>
+    {{/each}}
+</div>
+
+<script>
+    var currentSlide = -1;
+    var slides = document.getElementsByClassName("slide");
+    cycleSlides();
+
+    function cycleSlides(){
+      nextSlide();
+      setTimeout(cycleSlides, 4000);
+    }
+
+    function nextSlide(){
+      currentSlide++;
+      if(currentSlide >= slides.length){ currentSlide = 0; }
+
+      displaySlide(currentSlide);
+    }
+
+    function prevSlide(){
+      currentSlide--;
+      if(currentSlide < 0){ currentSlide = slides.length - 1; }
+
+      displaySlide(currentSlide);
+    }
+
+    function displaySlide(index){
+      for(var i = 0; i < slides.length; i++){
+        slides[i].style.display = "none";
+      }
+      slides[index].style.display = "block";
+    }
+
+
+</script>
